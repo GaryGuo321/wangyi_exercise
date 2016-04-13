@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+    body {
+        font: 14px/1.5 "Microsoft YaHei", "Helvetica", "sans-serif";
+    }
+    
+    .box {
+        width: 574px;
+        border: 1px solid #999;
+        overflow: hidden;
+    }
+    
+    .tab div {
+        background-color: #f1f1f1;
+        width: 33.2%;
+        float: left;
+        text-align: center;
+        padding: 10px 0;
+        border-right: 1px solid #cecece;
+        border-bottom: 1px solid #cecece;
+        cursor: pointer;
+    }
+    
+    .tab .atlas {
+        border-right: 0;
+    }
+    
+    .tab .tab-click {
+        border-bottom: 0;
+        background-color: #fff;
+    }
+    
+    .content {
+        clear: both;
+    }
+    
+    .content div {
+        padding: 20px;
+        background-color: #fff;
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- tab -->
+    <div class="box">
+        <div class="tab" id="tab">
+            <div class="subject">课程</div>
+            <div class="plan">学习计划</div>
+            <div class="atlas">技能图谱</div>
+        </div>
+        <div class="content" id="content">
+            <div class="subject-con">课程内容</div>
+            <div class="plan-con">学习计划内容</div>
+            <div class="atlas-con">技能图谱内容</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    // DOM操作
+    var operate = {
+        // 获取全部子元素
+        childNodes: function(ele) {
+            var arr = [];
+            var allNodes = ele.childNodes;
+            var nodesLength = allNodes.length;
+            for (var i = 0; i < nodesLength; i++) {
+                if (allNodes[i].nodeType === 1) {
+                    arr.push(allNodes[i]);
+                }
+            }
+            return arr;
+        },
+        // 获取其余全部兄弟元素
+        allSibling: function(ele, parent) {
+            var arr = this.childNodes(parent);
+            var length = arr.length;
+            for (var i = 0; i < length; i++) {
+                if (ele === arr[i]) {
+                    arr.splice(i, 1);
+                    break;
+                }
+            }
+            return arr;
+        },
+        // 获取父元素
+        parentNode: function(ele) {
+            return ele.parentNode;
+        },
+        // addClass方法(不覆盖)
+        addClass: function(ele, name) {
+            if (!ele.className) {
+                ele.className = name;
+            } else {
+                newClassName = ele.className;
+                newClassName += " ";
+                newClassName += name;
+                ele.className = newClassName;
+            }
+        },
+        // addClass方法(覆盖)
+        addCoverClass: function(ele, name) {
+            ele.className = name;
+        },
+        // removeClass方法
+        removeClass: function(ele, name) {
+            if (!name) {
+                ele.className = "";
+            } else {
+                var allClass = ele.className.split(" ");
+                var num = allClass.indexOf(name);
+                if (num != -1) {
+                    allClass.splice(num, 1);
+                    allClass = allClass.join(" ");
+                    ele.className = allClass;
+                }
+            }
+        }
+    };
+    // 主体代码
+    var tab = document.getElementById('tab');
+    var content = document.getElementById('content');
+    var tabChild = operate.childNodes(tab);
+    var contentChild = operate.childNodes(content);
+    var length = tabChild.length;
+    // tab切换
+    function tabShow(num, className, tabAll, contentAll, tabParent, contentParent) {
+        // 默认显示第n个tab
+        operate.addClass(tabChild[num], className);
+        contentChild[num].style.display = 'block';
+
+        var length = tabAll.length;
+
+        for (var i = 0; i < length; i++) {
+            ~ function(i) {
+                tabAll[i].onclick = function() {
+                    operate.addClass(this, className);
+                    contentAll[i].style.display = 'block';
+                    var tabSibling = operate.allSibling(this, tabParent);
+                    var contentSibling = operate.allSibling(contentAll[i], contentParent);
+                    var sibLength = tabSibling.length;
+                    for (var s = 0; s < sibLength; s++) {
+                        operate.removeClass(tabSibling[s], className);
+                        contentSibling[s].style.display = 'none';
+                    }
+                }
+            }(i)
+        }
+
+    }
+    tabShow(0, 'tab-click', tabChild, contentChild, tab, content);
+    </script>
+</body>
+
+</html>

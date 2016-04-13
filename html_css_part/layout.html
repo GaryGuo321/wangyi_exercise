@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <style type="text/css">
+    /*圣杯布局*/
+    
+    .parent {
+        color: #fff;
+        font-size: 25px;
+        text-align: center;
+        padding-left: 210px;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    
+    .main {
+        background-color: blue;
+        float: left;
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+    }
+    
+    .side {
+        background-color: red;
+        float: left;
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        margin-left: -100%;
+        position: relative;
+        left: -210px;
+    }
+    /*双飞翼布局*/
+    
+    .parent1 {
+        color: #fff;
+        font-size: 25px;
+        text-align: center;
+        overflow: hidden;
+        margin-bottom: 20px;
+    }
+    
+    .box {
+        margin-left: 210px;
+    }
+    
+    .main1 {
+        background-color: blue;
+        float: left;
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+    }
+    
+    .side1 {
+        background-color: red;
+        float: left;
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        margin-left: -100%;
+    }
+    /*flex布局*/
+    
+    .parent2 {
+        color: #fff;
+        font-size: 25px;
+        text-align: center;
+        display: -webkit-flex;
+        display: flex;
+    }
+    
+    .side2 {
+        background-color: red;
+        width: 200px;
+        height: 100px;
+        line-height: 100px;
+        margin-right: 10px;
+    }
+    
+    .main2 {
+        background-color: blue;
+        height: 100px;
+        line-height: 100px;
+        -webkit-flex: 1;
+        flex: 1;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- 圣杯布局 -->
+    <div class="parent">
+        <!-- 主栏是页面的主内容，需要优先加载html -->
+        <div class="main">主栏</div>
+        <div class="side">侧栏</div>
+    </div>
+    <!-- 双飞翼布局 -->
+    <div class="parent1">
+        <!-- 主栏是页面的主内容，需要优先加载html -->
+        <div class="box">
+            <div class="main1">主栏</div>
+        </div>
+        <div class="side1">侧栏</div>
+    </div>
+    <!-- flex布局 -->
+    <div class="parent2">
+        <div class="side2">侧栏</div>
+        <div class="main2">主栏</div>
+    </div>
+</body>
+</body>
+
+</html>
