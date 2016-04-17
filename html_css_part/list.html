@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>图书畅销榜</title>
+    <style type="text/css">
+    /*初始化*/
+    
+    body,
+    h1,
+    div,
+    ol,
+    li,
+    a {
+        padding: 0;
+        margin: 0;
+    }
+    
+    ol {
+        list-style: none;
+    }
+    
+    a {
+        color: #333;
+        text-decoration: none;
+    }
+    
+    .book {
+        margin: 30px;
+        width: 220px;
+    }
+    
+    .title {
+        font-size: 25px;
+        font-weight: bold;
+        color: #333;
+        display: block;
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 2px solid #e4e4e4;
+    }
+    
+    li {
+        display: block;
+        height: 40px;
+        line-height: 40px;
+        border-bottom: 1px dotted #e4e4e4;
+    }
+    
+    li:last-child {
+        border-bottom: none;
+    }
+    
+    li span {
+        margin-right: 15px;
+    }
+    
+    li a {
+        margin-left: 5px;
+        display: block;
+    }
+    
+    li a:hover {
+        color: #f55;
+    }
+    
+    li:nth-child(1) span,
+    li:nth-child(2) span,
+    li:nth-child(3) span {
+        color: #f55;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="book">
+        <h1 class="title">图书畅销榜</h1>
+        <ol>
+            <li><a href="#" title="当我足够好，才会遇见你"><span>1</span>当我足够好，才会遇见你</a></li>
+            <li><a href="#" title="皮囊"><span>2</span>皮囊</a></li>
+            <li><a href="#" title="李光耀论中国与世界"><span>3</span>李光耀论中国与世界</a></li>
+            <li><a href="#" title="乖，摸摸头"><span>4</span>乖，摸摸头</a></li>
+            <li><a href="#" title="男女内参"><span>5</span>男女内参</a></li>
+        </ol>
+    </div>
+</body>
+
+</html>

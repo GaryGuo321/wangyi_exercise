@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>表单</title>
+    <style type="text/css">
+    button {
+        padding: 0;
+        margin: 0;
+    }
+    
+    form {
+        margin: 50px;
+    }
+    
+    form input,
+    form textarea,
+    button {
+        outline: none;
+    }
+    
+    form div {
+        margin-bottom: 20px;
+    }
+    
+    div span,
+    label span {
+        margin-right: 25px;
+        vertical-align: middle;
+    }
+    
+    #files {
+        cursor: pointer;
+    }
+    
+    #name {
+        width: 170px;
+        height: 27px;
+        line-height: 27px;
+        padding-left: 6px;
+        border: 1px solid #e4e4e4;
+    }
+    
+    #name:focus {
+        border-color: #3388ff;
+    }
+    
+    #infor {
+        width: 260px;
+        height: 80px;
+        border: 1px solid #e4e4e4;
+        padding: 5px;
+        resize: none;
+    }
+    
+    #infor:focus {
+        border-color: #3388ff;
+    }
+    
+    .infor span {
+        vertical-align: top;
+        display: inline-block;
+        margin-top: 5px;
+    }
+    
+    #submit {
+        width: 80px;
+        height: 35px;
+        line-height: 35px;
+        border: none;
+        margin-left: 61px;
+        font-size: 15px;
+        color: #fff;
+        background: #f55;
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <form>
+        <div class="files">
+            <label for="files">
+                <span>头像</span>
+                <input type="file" id="files" name="file">
+            </label>
+        </div>
+        <div class="name">
+            <label for="name">
+                <span>昵称</span>
+                <input type="text" id="name" name="name">
+            </label>
+        </div>
+        <div class="edu">
+            <label for="edu">
+                <span>学历</span>
+                <select id="edu" name="edu">
+                    <option value="大专">大专</option>
+                    <option value="本科">本科</option>
+                </select>
+            </label>
+        </div>
+        <div class="sexs">
+            <span>性别</span>
+            <label for="boy">
+                <input type="radio" name="sex" id="boy" value="男"> 男
+            </label>
+            <label for="girl">
+                <input type="radio" name="sex" id="girl" value="女"> 女
+            </label>
+        </div>
+        <div class="hobby">
+            <span>爱好</span>
+            <label for="film">
+                <input type="checkbox" name="hobby" value="电影" id="film"> 电影
+            </label>
+            <label for="camera">
+                <input type="checkbox" name="hobby" value="摄像" id="camera"> 摄像
+            </label>
+            <label for="music">
+                <input type="checkbox" name="hobby" value="音乐" id="music"> 音乐
+            </label>
+            <label for="read">
+                <input type="checkbox" name="hobby" value="阅读" id="read"> 阅读
+            </label>
+        </div>
+        <div class="infor">
+            <label for="infor">
+                <span>签名</span>
+                <textarea id="infor" name="infor"></textarea>
+            </label>
+        </div>
+        <button type="submit" id="submit">保存</button>
+    </form>
+</body>
+
+</html>
