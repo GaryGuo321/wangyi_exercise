@@ -1,0 +1,158 @@
+@keyframes front {
+    form {
+        transform: translateZ(0px);
+    }
+    to {
+        transform: translateZ(76px);
+    }
+}
+
+@keyframes left {
+    form {
+        transform: rotateY(0deg) translateZ(0px);
+    }
+    to {
+        transform: rotateY(-90deg) translateZ(76px);
+    }
+}
+
+@keyframes right {
+    form {
+        transform: rotateY(0deg) translateZ(0px);
+    }
+    to {
+        transform: rotateY(90deg) translateZ(76px);
+    }
+}
+
+@keyframes top {
+    form {
+        transform: rotateX(0deg) translateZ(0px);
+    }
+    to {
+        transform: rotateX(90deg) translateZ(76px);
+    }
+}
+
+@keyframes bottom {
+    form {
+        transform: rotateX(0deg) translateZ(0px);
+    }
+    to {
+        transform: rotateX(-90deg) translateZ(76px);
+    }
+}
+
+@keyframes back {
+    form {
+        transform: rotateY(0deg) translateZ(0px);
+    }
+    to {
+        transform: rotateY(180deg) translateZ(76px);
+    }
+}
+
+@-webkit-keyframes rotate {
+    0% {
+        -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    }
+    50% {
+        -webkit-transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg);
+    }
+    100% {
+        -webkit-transform: rotateX(360deg) rotateY(360deg) rotateZ(0deg);
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 152px;
+    height: 152px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -76px;
+    margin-top: -76px;
+    perspective: 400px;
+}
+
+.box {
+    width: 152px;
+    height: 152px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    animation: rotate 4s ease-in-out 13s infinite forwards;
+}
+
+.box div {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #999;
+    position: absolute;
+    text-align: center;
+    line-height: 150px;
+}
+
+.front {
+    animation: front 2s ease 11s forwards;
+    transition: background-color .5s ease-in;
+}
+
+.left {
+    animation: left 2s ease 1s forwards;
+    transition: background-color .5s ease-in;
+}
+
+.right {
+    animation: right 2s ease 3s forwards;
+    transition: background-color .5s ease-in;
+}
+
+.top {
+    animation: top 2s ease 5s forwards;
+    transition: background-color .5s ease-in;
+}
+
+.bottom {
+    animation: bottom 2s ease 7s forwards;
+    transition: background-color .5s ease-in;
+}
+
+.back {
+    animation: back 2s ease 9s forwards;
+    transition: background-color .5s ease-in;
+}
+
+.box:hover .front {
+    background-color: red;
+    transition: background-color .5s ease-in;
+}
+
+.box:hover .back {
+    background-color: green;
+    transition: background-color .5s ease-in;
+}
+
+.box:hover .top {
+    background-color: yellow;
+    transition: background-color .5s ease-in;
+}
+
+.box:hover .right {
+    background-color: blue;
+    transition: background-color .5s ease-in;
+}
+
+.box:hover .left {
+    background-color: orange;
+    transition: background-color .5s ease-in;
+}
+
+.box:hover .bottom {
+    background-color: pink;
+    transition: background-color .5s ease-in;
+}

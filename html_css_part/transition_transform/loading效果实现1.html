@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>loading效果实现</title>
+	<style type="text/css">
+	@keyframes load{
+		from{
+			transform:rotateZ(0deg);
+		}
+		to{
+			transform:rotateZ(360deg);
+		}
+	}
+	.loading1{
+		width: 30px;
+		height: 30px;
+		border-radius: 50%;
+		border:2px solid #000;
+		/*设置border缺一部分*/
+		border-top-color: transparent;
+		/*如果设置border为none会出现问题*/
+		/*border-top:none;*/
+		position: absolute;
+		left: 50%;
+		top:50%;
+		margin-left: -15px;
+		margin-top: -15px;
+		animation: load 1s linear both infinite;
+	}
+	</style>
+</head>
+<body>
+	<div class="loading1"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>浮动布局</title>
+    <style type="text/css">
+    .parent {
+        width: 810px;
+        margin: 0 auto;
+        color: #fff;
+        /*清除浮动*/
+        overflow: hidden;
+    }
+    
+    .side {
+        box-sizing: border-box;
+        width: 200px;
+        padding: 20px 10px;
+        background: #e70038;
+        float: left;
+        text-align: center;
+    }
+    
+    .main {
+        box-sizing: border-box;
+        width: 600px;
+        padding: 20px 10px;
+        background: #38f;
+        float: right;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="side">侧栏</div>
+        <div class="main">主栏</div>
+    </div>
+</body>
+
+</html>

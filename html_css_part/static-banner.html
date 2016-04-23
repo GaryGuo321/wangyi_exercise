@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>banner</title>
+    <style type="text/css">
+    .slide {
+        width: 200px;
+        height: 100px;
+        margin: 0 auto;
+        position: relative;
+        background: #77ddff;
+    }
+    
+    .pointer {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        z-index: 1000;
+    }
+    
+    .pointer i {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #000;
+        cursor: pointer;
+    }
+    
+    .pointer i:not(:last-child) {
+        margin-right: 5px;
+    }
+    
+    .pointer .current {
+        background: #fff;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="slide">
+        <!-- 图片省略 -->
+        <!-- 以下是指示器 -->
+        <div class="pointer"><i class="current"></i><i></i><i></i></div>
+    </div>
+</body>
+
+</html>

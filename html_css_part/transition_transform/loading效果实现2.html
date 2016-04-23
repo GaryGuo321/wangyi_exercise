@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>loading效果实现2</title>
+    <style type="text/css">
+    .loading{
+    	position: fixed;
+        top: 50%;
+        left: 50%;
+        /* 宽度是6个排列点的总和：(8+4*2)*6 */
+        width: 96px;
+        height: 12px;
+        margin: -6px 0 0 -48px;
+        /* 只显示容器范围内的进度条，超出的截掉 */
+        overflow: hidden;
+    }
+    .bar{
+    	width: 176px;
+    	animation: loading 1s steps(5, end) both infinite;
+    }
+	.loading i{
+		float: left;
+		width: 8px;
+		height: 4px;
+		margin: 4px;
+		background: #aaa;
+	}
+	.loading i:nth-child(6){
+		transform: scale(1.5);
+        background: #333;
+	}
+	@keyframes loading {
+        /* 把进度条移动到第六个点正好在容器的左侧第一个 */
+        0% {
+            transform: translate(-80px);
+        }
+        /* 向右移动到第一个点正好在容器的左侧第一个，这里80%就完成一遍动画是为了给最后一步留出1/5的停留时间 */
+        80%{
+            transform: translate(0px);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="loading">
+        <div class="bar">
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+        </div>
+    </div>
+</body>
+
+</html>
